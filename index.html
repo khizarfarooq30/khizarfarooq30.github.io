@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="RageRun Games: Unity physics controllers for bikes, skates, boards, drones, planes and wobbly balance acts.">
+<meta name="description" content="RageRun Games: Unity physics controllers for drones, bikes, skates, karts, kayaks, planes and wobbly balance acts.">
 <title>RageRun Games</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -184,7 +184,7 @@ section { padding-block: 56px; }
 .card[data-cat="flight"] { --hue: var(--cobalt); }
 .card[data-cat="ground"] { --hue: var(--orange); }
 .card[data-cat="balance"] { --hue: var(--good); }
-.card[data-cat="template"] { --hue: var(--warn); }
+.card[data-cat="action"] { --hue: var(--warn); }
 .tag {
   position: absolute; top: 10px; left: 10px; font-family: var(--f-mono); font-size: 11px; font-weight: 600;
   letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 6px;
@@ -405,41 +405,59 @@ footer p { max-width: 70ch; }
   /* ---------- Controllers: replace or add entries as overhauls ship ----------
      id: Asset Store package number (from the package URL). null = links to the publisher page until you add it.
      gen: "new" (current playbook) or "classic" (overhaul planned).
-     cat: flight | ground | balance | template */
+     cat: flight | ground | balance | action */
   const CONTROLLERS = [
-    { name: "Roller Skate Controller", id: null, gen: "new", cat: "ground", icon: "skate",
-      desc: "Roller skating with a procedural, physics-driven body. The first controller built on the new RageRun playbook: one Setup Window, presets and plain-language sliders.",
-      tags: ["Unity 6", "Built-in + URP", "2026"] },
-    { name: "Ball Runner Controller", id: null, gen: "new", cat: "balance", icon: "ball",
-      desc: "A googly-eyed rider balancing on a rolling ball: inverted-pendulum balance, ragdoll fall and climb, 11 game templates, AI riders, throwables, a Level Designer and a Game Mode Creator.",
-      tags: ["Unity 6", "Built-in + URP", "Local multiplayer"] },
-    { name: "Super UFO Controller", id: 389408, gen: "classic", cat: "flight", icon: "ufo",
-      desc: "Physics-based flying-saucer controller with low-poly UFO models and an environment to fly through.",
-      tags: ["Physics", "Low poly"] },
-    { name: "Arcade Ski Controller", id: 319412, gen: "classic", cat: "ground", icon: "ski",
-      desc: "Fast downhill skiing with IK-driven legs that adapt to slopes, raycast ground hugging and inspector settings for speed, turning, air control and lean.",
-      tags: ["Unity 6", "Cinemachine", "IK"] },
-    { name: "Bicycle Controller", id: 315810, gen: "classic", cat: "ground", icon: "bike",
-      desc: "Physics pedalling and balance with arcade or realistic riding modes, rider lean and IK animation, and keyboard, gamepad and mobile input.",
-      tags: ["Unity 6", "IK rider", "Mobile"], demo: "https://ragerun.itch.io/bicycle-controller-demo" },
+    { name: "Drone Flight Controller Pro", id: 418284, gen: "new", cat: "flight", icon: "drone",
+      desc: "Real multirotor physics with Cinematic, Sport and Acro modes, plus a one-click Arcade mode. AI drones, mouse-aimed turrets and homing missiles, a procedural Drone Creator and four demo scenes.",
+      tags: ["Unity 6", "URP", "AI drones", "Combat"] },
+    { name: "Ball Balance Controller", id: 417744, gen: "new", cat: "balance", icon: "ball",
+      desc: "A cartoon rider balancing on a giant rolling ball with a real balance model, ragdoll falls and googly eyes. Includes 11 ready-made games, AI riders and a no-code level designer.",
+      tags: ["Unity 6", "Built-in + URP", "11 games"] },
+    { name: "Roller Skate Controller", id: 417478, gen: "new", cat: "ground", icon: "skate",
+      desc: "Physics-based inline skating with a procedural IK body, grinds, airs and superhero-style landings. Works on any humanoid rig and includes a full demo skatepark.",
+      tags: ["Unity 6", "Built-in + URP", "Any humanoid"] },
+    { name: "Pogo Stick Controller", id: 321955, gen: "classic", cat: "balance", icon: "pogo",
+      desc: "Physics-based pogo stick controller with rigidbody motion and IK-driven animation, for stunt games, platformers and rage-style challenges.",
+      tags: ["Rigidbody", "IK"] },
     { name: "Paper Plane Controller", id: 310310, gen: "classic", cat: "flight", icon: "plane",
       desc: "Arcade paper-plane flight with procedural wing flutter from real-time mesh deformation, 10 plane models, and mobile and keyboard controls.",
       tags: ["Mesh deformation", "10 models", "Mobile"], demo: "https://ragerun.itch.io/paper-plane-controller" },
-    { name: "Easy Hover Controller", id: 305359, gen: "classic", cat: "ground", icon: "hover",
+    { name: "Arcade Ski Controller", id: 319412, gen: "classic", cat: "ground", icon: "ski",
+      desc: "Fast downhill skiing with IK-driven legs that adapt to slopes, raycast ground hugging and inspector settings for speed, turning, air control and lean.",
+      tags: ["Unity 6", "Cinemachine", "IK"] },
+    { name: "Kayak Controller", id: 322068, gen: "classic", cat: "ground", icon: "kayak",
+      desc: "Physics-based kayaking with forward, draw and sweep paddle strokes, configurable buoyancy, leaning and water drag. Gamepad, keyboard and mobile input.",
+      tags: ["Buoyancy", "Mobile"] },
+    { name: "Bicycle Controller", id: 315810, gen: "classic", cat: "ground", icon: "bike",
+      desc: "Physics pedalling and balance with arcade or realistic riding modes, rider lean and IK animation, and keyboard, gamepad and mobile input.",
+      tags: ["Unity 6", "IK rider", "Mobile"], demo: "https://ragerun.itch.io/bicycle-controller-demo" },
+    { name: "Bow & Arrow Controller", id: 313203, gen: "classic", cat: "action", icon: "bow",
+      desc: "First-person archery with IK animation for smooth aiming, drawing and shooting, tuned through ScriptableObjects.",
+      tags: ["First person", "IK"] },
+    { name: "Super UFO Controller", id: 389408, gen: "classic", cat: "flight", icon: "ufo",
+      desc: "Physics-based flying-saucer controller with low-poly UFO models and an environment to fly through.",
+      tags: ["Physics", "Low poly"] },
+    { name: "Kart Controller", id: 390208, gen: "classic", cat: "ground", icon: "kart",
+      desc: "Arcade bumper-kart controller with smooth handling, tight drifting and grounded hover physics, for party racers and arena battlers.",
+      tags: ["Arcade", "Drift"] },
+    { name: "Top Down Helicopter Controller", id: 349692, gen: "classic", cat: "flight", icon: "heli",
+      desc: "Top-down helicopter with arcade controls on physics-based movement and a modular weapon system. Make gunships or scouts by tuning ScriptableObjects, with no code changes.",
+      tags: ["Top down", "Weapons"] },
+    { name: "Kick Scooty Controller", id: 335484, gen: "classic", cat: "ground", icon: "scooter",
+      desc: "Arcade kick-scooter controller with physics-based movement and smooth handling.",
+      tags: ["Physics", "Arcade"] },
+    { name: "Pocket Plane Controller", id: 324876, gen: "classic", cat: "flight", icon: "wing",
+      desc: "Agile arcade flight with smooth character IK for stunts, dives and fluid manoeuvres.",
+      tags: ["Character IK", "Stunts"] },
+    { name: "Snow Mobile Controller", id: 321954, gen: "classic", cat: "ground", icon: "sled",
+      desc: "Physics-based snowmobile with responsive controls and terrain handling, built for winter games and easy to integrate.",
+      tags: ["Terrain", "Physics"] },
+    { name: "Hover Controller", id: 305359, gen: "classic", cat: "ground", icon: "hover",
       desc: "Hovercraft, hoverboard and a 360-degree hover controller sharing one set of scripts, with IK-driven rider animation and demo assets.",
       tags: ["Hoverboard", "360° mode", "IK"], demo: "https://ragerun.itch.io/easy-hover-controller" },
-    { name: "Swing Master Game Template", id: 292891, gen: "classic", cat: "template", icon: "rope",
-      desc: "A ready-to-ship rope-swinging game template to build on or reskin.",
-      tags: ["Game template"] },
-    { name: "Hybrid Vehicle Controller", id: 279486, gen: "classic", cat: "flight", icon: "flycar",
-      desc: "A car that turns into a drone: drive, lift off, fly and perform stunts on slopes. Low-poly full template with demo scenes.",
-      tags: ["Car + drone", "Built-in · URP · HDRP"], demo: "https://ragerun.itch.io/hybrid-car-controller" },
-    { name: "Easy Flying System", id: 272037, gen: "classic", cat: "flight", icon: "wing",
-      desc: "Drop-in third-person flying with take-off, glide and landing, made to plug into existing characters.",
-      tags: ["Flight", "Third person"], demo: "https://ragerun.itch.io/easy-flying-system-demo" },
-    { name: "Easy Drone Controller", id: null, gen: "classic", cat: "flight", icon: "drone",
-      desc: "Arcade drone flight with tuneable handling. Also available with an AI add-on for computer-controlled drones.",
-      tags: ["Drone", "AI add-on available"] }
+    { name: "Swing Controller", id: 292891, gen: "classic", cat: "action", icon: "rope",
+      desc: "Physics-based 2D rope swinging with a semi-realistic rope effect, for platformers and swing games.",
+      tags: ["2D", "Rope physics"] }
   ];
 
   const ROADMAP = [
@@ -450,7 +468,7 @@ footer p { max-width: 70ch; }
     { name: "Log Rolling Controller", st: "build", label: "In development", desc: "Two riders on one log with coupled balance. Co-op courses, birling on water, River Rapids and Frozen Lake." },
     { name: "Supercharge: Jetpack Hero", st: "build", label: "In development", desc: "Heroic flight, superhero landings with hit-stop, wrist blaster, powers, drones and a destructible night city." },
     { name: "Wobbly Brawl Controller", st: "build", label: "In development", desc: "Active-ragdoll brawlers punch, grab, carry and throw each other off the arena. Drop-in gamepads." },
-    { name: "Swing Controller", st: "plan", label: "Planned", desc: "Rope-to-rope swinging in 3D and 2.5D with an active-ragdoll body, simulated ropes and a momentum meter." },
+    { name: "Swing Controller 2.0", st: "plan", label: "Planned", desc: "Rope-to-rope swinging in 3D and 2.5D with an active-ragdoll body, simulated ropes and a momentum meter." },
     { name: "Fighting Biker Controller", st: "plan", label: "Planned", desc: "A wobbly rider who kicks, punches and throws rubber chickens at other riders, mid-wheelie." }
   ];
 
@@ -467,6 +485,13 @@ footer p { max-width: 70ch; }
     wing: `<svg viewBox="0 0 48 48" ${S}><path d="M24 30C16 18 8 16 4 18c6 2 8 8 14 12M24 30c8-12 16-14 20-12-6 2-8 8-14 12"/><circle cx="24" cy="22" r="3"/><path d="M24 25v13M20 42l4-4 4 4"/></svg>`,
     ufo: `<svg viewBox="0 0 48 48" ${S}><path d="M16 22c0-5 3.5-9 8-9s8 4 8 9"/><ellipse cx="24" cy="25" rx="18" ry="5.5"/><path d="M14 34l-3 6M24 34v7M34 34l3 6" stroke-dasharray="2 3"/></svg>`,
     drone: `<svg viewBox="0 0 48 48" ${S}><rect x="19" y="19" width="10" height="10" rx="2"/><path d="M19 19l-7-7M29 19l7-7M19 29l-7 7M29 29l7 7"/><ellipse cx="12" cy="12" rx="6" ry="2"/><ellipse cx="36" cy="12" rx="6" ry="2"/><ellipse cx="12" cy="36" rx="6" ry="2"/><ellipse cx="36" cy="36" rx="6" ry="2"/></svg>`,
+    pogo: `<svg viewBox="0 0 48 48" ${S}><circle cx="24" cy="7" r="3.5"/><path d="M24 11v10M18 15l6 3 6-3M20 30l4-9 4 9"/><path d="M24 4v36M18 30h12"/><path d="M21 42c1-2 5-2 6 0M21 45c1-2 5-2 6 0"/></svg>`,
+    kayak: `<svg viewBox="0 0 48 48" ${S}><path d="M4 30c8 4 32 4 40 0-6-3-34-3-40 0z"/><circle cx="24" cy="15" r="3.5"/><path d="M24 19v8M10 32L38 10M8 34l4-4M36 12l4-4"/><path d="M6 40c4-2 6 2 10 0s6 2 10 0 6 2 10 0 6 2 6 0"/></svg>`,
+    bow: `<svg viewBox="0 0 48 48" ${S}><path d="M14 6c14 6 14 30 0 36"/><path d="M14 6v36"/><path d="M8 24h34M36 20l6 4-6 4M10 21l-3 3 3 3"/></svg>`,
+    kart: `<svg viewBox="0 0 48 48" ${S}><path d="M6 30h36l-4-8H26l-4-6h-6l-2 6H8z"/><circle cx="12" cy="34" r="4"/><circle cx="36" cy="34" r="4"/><circle cx="20" cy="12" r="3"/></svg>`,
+    heli: `<svg viewBox="0 0 48 48" ${S}><path d="M6 10h36M24 10v6"/><path d="M14 24c0-5 4-8 10-8h4c5 0 8 3 8 8s-3 6-8 6H22c-5 0-8-2-8-6z"/><path d="M36 22h8l2-4M18 30l-2 6h18M28 30l2 6"/></svg>`,
+    scooter: `<svg viewBox="0 0 48 48" ${S}><circle cx="10" cy="36" r="5"/><circle cx="38" cy="36" r="5"/><path d="M10 36h22l6-26h-6M38 10h4"/></svg>`,
+    sled: `<svg viewBox="0 0 48 48" ${S}><path d="M8 26h22l6-6h4l2 6v4H8z"/><circle cx="22" cy="14" r="3"/><path d="M22 17v6M4 38h28c4 0 6-2 6-4M30 30l-4 8M14 30l-2 8"/><path d="M36 30l6 8h4"/></svg>`,
     rope: `<svg viewBox="0 0 48 48" ${S}><path d="M6 6h36M14 6l8 18M36 6l-4 14"/><circle cx="23" cy="27" r="3"/><path d="M23 30l1 8M18 33l5-2 5 2M20 44l4-6 3 6"/></svg>`
   };
 
@@ -476,7 +501,7 @@ footer p { max-width: 70ch; }
     { key: "ground", label: "Ground & boards" },
     { key: "flight", label: "Flight" },
     { key: "balance", label: "Balance & party" },
-    { key: "template", label: "Templates" }
+    { key: "action", label: "Action" }
   ];
 
   const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
