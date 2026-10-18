@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="RageRun Games: Unity physics controllers for drones, bikes, skates, karts, kayaks, planes and wobbly balance acts.">
+<meta name="description" content="RageRun Games: Unity physics controllers for drones, skates, helicopters, rope swings and wobbly balance acts.">
 <title>RageRun Games</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -285,14 +285,14 @@ footer p { max-width: 70ch; }
       <div>
         <div class="eyebrow">Unity Asset Store publisher</div>
         <h1>Physics controllers that <em>feel</em> fun.</h1>
-        <p class="lede">RageRun Games builds drop-in Unity controllers for bikes, skates, boards, drones, planes and wobbly balance acts. Each one comes with demo scenes, full C# source and settings an artist can tune without opening a script.</p>
+        <p class="lede">RageRun Games builds drop-in Unity controllers for drones, skates, helicopters, rope swings and wobbly balance acts. Each one comes with demo scenes, full C# source and settings an artist can tune without opening a script.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#controllers">Browse controllers</a>
           <a class="btn" id="hero-store" href="#" target="_blank" rel="noopener sponsored">Publisher page</a>
         </div>
         <div class="stats">
           <div class="stat"><b id="st-live">0</b><span>controllers on the store</span></div>
-          <div class="stat"><b id="st-demos">0</b><span>playable web demos</span></div>
+          <div class="stat" id="st-demos-wrap"><b id="st-demos">0</b><span>playable web demos</span></div>
           <div class="stat"><b id="st-next">0</b><span>new assets in the works</span></div>
         </div>
       </div>
@@ -315,7 +315,7 @@ footer p { max-width: 70ch; }
           <div class="eyebrow">Portfolio</div>
           <h2>Every controller, in one place</h2>
         </div>
-        <p>New-generation releases follow the current RageRun playbook. Classic assets are still on sale and are getting full overhauls one by one.</p>
+        <p>Every controller listed here is live on the Unity Asset Store. Older assets are being rebuilt from scratch and will return as new releases.</p>
       </div>
       <div class="toolbar">
         <div class="chips" id="chips" role="group" aria-label="Filter by type"></div>
@@ -416,45 +416,9 @@ footer p { max-width: 70ch; }
     { name: "Roller Skate Controller", id: 417478, gen: "new", cat: "ground", icon: "skate",
       desc: "Physics-based inline skating with a procedural IK body, grinds, airs and superhero-style landings. Works on any humanoid rig and includes a full demo skatepark.",
       tags: ["Unity 6", "Built-in + URP", "Any humanoid"] },
-    { name: "Pogo Stick Controller", id: 321955, gen: "classic", cat: "balance", icon: "pogo",
-      desc: "Physics-based pogo stick controller with rigidbody motion and IK-driven animation, for stunt games, platformers and rage-style challenges.",
-      tags: ["Rigidbody", "IK"] },
-    { name: "Paper Plane Controller", id: 310310, gen: "classic", cat: "flight", icon: "plane",
-      desc: "Arcade paper-plane flight with procedural wing flutter from real-time mesh deformation, 10 plane models, and mobile and keyboard controls.",
-      tags: ["Mesh deformation", "10 models", "Mobile"], demo: "https://ragerun.itch.io/paper-plane-controller" },
-    { name: "Arcade Ski Controller", id: 319412, gen: "classic", cat: "ground", icon: "ski",
-      desc: "Fast downhill skiing with IK-driven legs that adapt to slopes, raycast ground hugging and inspector settings for speed, turning, air control and lean.",
-      tags: ["Unity 6", "Cinemachine", "IK"] },
-    { name: "Kayak Controller", id: 322068, gen: "classic", cat: "ground", icon: "kayak",
-      desc: "Physics-based kayaking with forward, draw and sweep paddle strokes, configurable buoyancy, leaning and water drag. Gamepad, keyboard and mobile input.",
-      tags: ["Buoyancy", "Mobile"] },
-    { name: "Bicycle Controller", id: 315810, gen: "classic", cat: "ground", icon: "bike",
-      desc: "Physics pedalling and balance with arcade or realistic riding modes, rider lean and IK animation, and keyboard, gamepad and mobile input.",
-      tags: ["Unity 6", "IK rider", "Mobile"], demo: "https://ragerun.itch.io/bicycle-controller-demo" },
-    { name: "Bow & Arrow Controller", id: 313203, gen: "classic", cat: "action", icon: "bow",
-      desc: "First-person archery with IK animation for smooth aiming, drawing and shooting, tuned through ScriptableObjects.",
-      tags: ["First person", "IK"] },
-    { name: "Super UFO Controller", id: 389408, gen: "classic", cat: "flight", icon: "ufo",
-      desc: "Physics-based flying-saucer controller with low-poly UFO models and an environment to fly through.",
-      tags: ["Physics", "Low poly"] },
-    { name: "Kart Controller", id: 390208, gen: "classic", cat: "ground", icon: "kart",
-      desc: "Arcade bumper-kart controller with smooth handling, tight drifting and grounded hover physics, for party racers and arena battlers.",
-      tags: ["Arcade", "Drift"] },
     { name: "Top Down Helicopter Controller", id: 349692, gen: "classic", cat: "flight", icon: "heli",
       desc: "Top-down helicopter with arcade controls on physics-based movement and a modular weapon system. Make gunships or scouts by tuning ScriptableObjects, with no code changes.",
       tags: ["Top down", "Weapons"] },
-    { name: "Kick Scooty Controller", id: 335484, gen: "classic", cat: "ground", icon: "scooter",
-      desc: "Arcade kick-scooter controller with physics-based movement and smooth handling.",
-      tags: ["Physics", "Arcade"] },
-    { name: "Pocket Plane Controller", id: 324876, gen: "classic", cat: "flight", icon: "wing",
-      desc: "Agile arcade flight with smooth character IK for stunts, dives and fluid manoeuvres.",
-      tags: ["Character IK", "Stunts"] },
-    { name: "Snow Mobile Controller", id: 321954, gen: "classic", cat: "ground", icon: "sled",
-      desc: "Physics-based snowmobile with responsive controls and terrain handling, built for winter games and easy to integrate.",
-      tags: ["Terrain", "Physics"] },
-    { name: "Hover Controller", id: 305359, gen: "classic", cat: "ground", icon: "hover",
-      desc: "Hovercraft, hoverboard and a 360-degree hover controller sharing one set of scripts, with IK-driven rider animation and demo assets.",
-      tags: ["Hoverboard", "360° mode", "IK"], demo: "https://ragerun.itch.io/easy-hover-controller" },
     { name: "Swing Controller", id: 292891, gen: "classic", cat: "action", icon: "rope",
       desc: "Physics-based 2D rope swinging with a semi-realistic rope effect, for platformers and swing games.",
       tags: ["2D", "Rope physics"] }
@@ -539,7 +503,7 @@ footer p { max-width: 70ch; }
     if (!list.length) { grid.innerHTML = `<div class="empty">No controllers match “${esc(query)}”. Try another word or clear the filter.</div>`; return; }
     grid.innerHTML = list.map((c) => {
       const href = c.id ? pkg(c.id) : storeUrl;
-      const tag = c.gen === "new" ? '<span class="tag tag-new">New</span>' : '<span class="tag tag-classic">Overhaul coming</span>';
+      const tag = c.gen === "new" ? '<span class="tag tag-new">New</span>' : '';
       const demo = c.demo ? `<a class="demo" href="${c.demo}" target="_blank" rel="noopener">Play demo</a>` : "";
       return `<article class="card" data-cat="${c.cat}">
         <div class="card-art">${tag}${ICONS[c.icon] || ""}</div>
@@ -560,7 +524,9 @@ footer p { max-width: 70ch; }
     `<div class="road-item"><span class="pill p-${r.st}">${r.label}</span><h3>${esc(r.name)}</h3><p>${esc(r.desc)}</p></div>`).join("");
 
   document.getElementById("st-live").textContent = CONTROLLERS.length;
-  document.getElementById("st-demos").textContent = CONTROLLERS.filter((c) => c.demo).length;
+  const nDemos = CONTROLLERS.filter((c) => c.demo).length;
+  document.getElementById("st-demos").textContent = nDemos;
+  document.getElementById("st-demos-wrap").hidden = nDemos === 0;
   document.getElementById("st-next").textContent = ROADMAP.length;
 
   const copyBtn = document.getElementById("copy");
