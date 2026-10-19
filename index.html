@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="RageRun Games: Unity physics controllers for drones, skates, helicopters, rope swings and wobbly balance acts.">
+<meta name="description" content="RageRun Games: Unity physics controllers for drones, skates, unicycles and wobbly balance acts.">
 <title>RageRun Games</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -285,7 +285,7 @@ footer p { max-width: 70ch; }
       <div>
         <div class="eyebrow">Unity Asset Store publisher</div>
         <h1>Physics controllers that <em>feel</em> fun.</h1>
-        <p class="lede">RageRun Games builds drop-in Unity controllers for drones, skates, helicopters, rope swings and wobbly balance acts. Each one comes with demo scenes, full C# source and settings an artist can tune without opening a script.</p>
+        <p class="lede">RageRun Games builds drop-in Unity controllers for drones, skates, unicycles and wobbly balance acts. Each one comes with demo scenes, full C# source and settings an artist can tune without opening a script.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#controllers">Browse controllers</a>
           <a class="btn" id="hero-store" href="#" target="_blank" rel="noopener sponsored">Publisher page</a>
@@ -415,23 +415,19 @@ footer p { max-width: 70ch; }
     { name: "Roller Skate Controller", id: 417478, gen: "new", cat: "ground", icon: "skate",
       desc: "Physics-based inline skating with a procedural IK body, grinds, airs and superhero-style landings. Works on any humanoid rig and includes a full demo skatepark.",
       tags: ["Unity 6", "Built-in + URP", "Any humanoid"] },
-    { name: "Top Down Helicopter Controller", id: 349692, gen: "classic", cat: "flight", icon: "heli",
-      desc: "Top-down helicopter with arcade controls on physics-based movement and a modular weapon system. Make gunships or scouts by tuning ScriptableObjects, with no code changes.",
-      tags: ["Top down", "Weapons"] },
-    { name: "Swing Controller", id: 292891, gen: "classic", cat: "action", icon: "rope",
-      desc: "Physics-based 2D rope swinging with a semi-realistic rope effect, for platformers and swing games.",
-      tags: ["2D", "Rope physics"] }
+    { name: "Unicycle Controller", id: 418182, gen: "new", cat: "balance", icon: "unicycle",
+      desc: "A cartoon rider who has to keep pedalling to stay up, with fore-aft and sideways balance, ragdoll falls, tricks, local multiplayer, CPU riders, and High Wire and Sky Islands modes.",
+      tags: ["Unity 6", "Built-in + URP", "Local multiplayer"] }
   ];
 
   const ROADMAP = [
-    { name: "Unicycle Controller", st: "review", label: "In review", desc: "Keep pedalling to stay up: fore-aft and sideways balance, idling, ragdoll falls, tricks, High Wire and Sky Islands modes." },
     { name: "Silly Character Kit", st: "ready", label: "Next release", desc: "Googly eyes, eyelids, wobbly bodies, moods and springy extras for any character, with a live-preview Setup Window." },
     { name: "Party Soccer Controller", st: "build", label: "Final testing", desc: "Wobbly players, ragdoll tackles and overcharged shots across seven modes, including Head Soccer. Local 1v1 and 2v2." },
     { name: "Pogo Stick Controller 2.0", st: "build", label: "Final testing", desc: "A full overhaul of the 2025 Pogostick: four game modes, local multiplayer, CPU riders and humanoid characters." },
     { name: "Log Rolling Controller", st: "build", label: "In development", desc: "Two riders on one log with coupled balance. Co-op courses, birling on water, River Rapids and Frozen Lake." },
     { name: "Supercharge: Jetpack Hero", st: "build", label: "In development", desc: "Heroic flight, superhero landings with hit-stop, wrist blaster, powers, drones and a destructible night city." },
     { name: "Wobbly Brawl Controller", st: "build", label: "In development", desc: "Active-ragdoll brawlers punch, grab, carry and throw each other off the arena. Drop-in gamepads." },
-    { name: "Swing Controller 2.0", st: "plan", label: "Planned", desc: "Rope-to-rope swinging in 3D and 2.5D with an active-ragdoll body, simulated ropes and a momentum meter." },
+    { name: "Swing Controller", st: "plan", label: "Planned", desc: "Rope-to-rope swinging in 3D and 2.5D with an active-ragdoll body, simulated ropes and a momentum meter." },
     { name: "Fighting Biker Controller", st: "plan", label: "Planned", desc: "A wobbly rider who kicks, punches and throws rubber chickens at other riders, mid-wheelie." }
   ];
 
@@ -455,6 +451,7 @@ footer p { max-width: 70ch; }
     heli: `<svg viewBox="0 0 48 48" ${S}><path d="M6 10h36M24 10v6"/><path d="M14 24c0-5 4-8 10-8h4c5 0 8 3 8 8s-3 6-8 6H22c-5 0-8-2-8-6z"/><path d="M36 22h8l2-4M18 30l-2 6h18M28 30l2 6"/></svg>`,
     scooter: `<svg viewBox="0 0 48 48" ${S}><circle cx="10" cy="36" r="5"/><circle cx="38" cy="36" r="5"/><path d="M10 36h22l6-26h-6M38 10h4"/></svg>`,
     sled: `<svg viewBox="0 0 48 48" ${S}><path d="M8 26h22l6-6h4l2 6v4H8z"/><circle cx="22" cy="14" r="3"/><path d="M22 17v6M4 38h28c4 0 6-2 6-4M30 30l-4 8M14 30l-2 8"/><path d="M36 30l6 8h4"/></svg>`,
+    unicycle: `<svg viewBox="0 0 48 48" ${S}><circle cx="24" cy="36" r="9"/><path d="M24 36V18M19 16h10"/><circle cx="24" cy="6" r="3.5"/><path d="M24 10v6M17 11l7 2 7-2M21 22l-3 8M27 22l3 8"/></svg>`,
     rope: `<svg viewBox="0 0 48 48" ${S}><path d="M6 6h36M14 6l8 18M36 6l-4 14"/><circle cx="23" cy="27" r="3"/><path d="M23 30l1 8M18 33l5-2 5 2M20 44l4-6 3 6"/></svg>`
   };
 
