@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="RageRun Games: Unity physics controllers for drones, skates, unicycles and wobbly balance acts.">
+<meta name="description" content="RageRun Games: Unity physics controllers for drones, paper planes, skates, unicycles and wobbly balance acts.">
 <title>RageRun Games</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -181,6 +181,9 @@ section { padding-block: 56px; }
   color: var(--hue);
 }
 .card-art svg { width: 76px; height: 76px; }
+.card-art.has-img { height: auto; aspect-ratio: 3 / 2; max-width: 100%; background: var(--bg); }
+.card-art.has-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.card-art.has-img .tag { z-index: 1; left: auto; right: 10px; }
 .card[data-cat="flight"] { --hue: var(--cobalt); }
 .card[data-cat="ground"] { --hue: var(--orange); }
 .card[data-cat="balance"] { --hue: var(--good); }
@@ -258,6 +261,8 @@ section { padding-block: 56px; }
 footer { border-top: 1px solid var(--line); }
 footer .wrap { padding-block: 26px; display: flex; flex-wrap: wrap; gap: 12px 24px; justify-content: space-between; font-size: 13px; color: var(--muted); }
 footer p { max-width: 70ch; }
+footer .visits { flex-basis: 100%; }
+footer .visits img { display: block; height: 20px; width: auto; }
 </style>
 </head>
 <body>
@@ -285,7 +290,7 @@ footer p { max-width: 70ch; }
       <div>
         <div class="eyebrow">Unity Asset Store publisher</div>
         <h1>Physics controllers that <em>feel</em> fun.</h1>
-        <p class="lede">RageRun Games builds drop-in Unity controllers for drones, skates, unicycles and wobbly balance acts. Each one comes with demo scenes, full C# source and settings an artist can tune without opening a script.</p>
+        <p class="lede">RageRun Games builds drop-in Unity controllers for drones, paper planes, skates, unicycles and wobbly balance acts. Each one comes with demo scenes, full C# source and settings an artist can tune without opening a script.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#controllers">Browse controllers</a>
           <a class="btn" id="hero-store" href="#" target="_blank" rel="noopener sponsored">Publisher page</a>
@@ -390,6 +395,7 @@ footer p { max-width: 70ch; }
   <div class="wrap">
     <p>&copy; 2026 RageRun Games. Asset Store links on this page are affiliate links: buying through them supports the studio at no extra cost to you.</p>
     <p>Unity and the Unity Asset Store are trademarks of Unity Technologies.</p>
+    <p class="visits" id="visits"><img src="https://visitor-badge.laobi.icu/badge?page_id=ragerungames.github.io&amp;left_text=Visitors&amp;left_color=%23141a2e&amp;right_color=%23f2622e" alt="Visitor count" height="20" onerror="this.closest('.visits').hidden = true"></p>
   </div>
 </footer>
 
@@ -406,16 +412,19 @@ footer p { max-width: 70ch; }
      gen: "new" (current playbook) or "classic" (overhaul planned).
      cat: flight | ground | balance | action */
   const CONTROLLERS = [
-    { name: "Drone Flight Controller Pro", id: 418284, gen: "new", cat: "flight", icon: "drone",
+    { name: "Drone Flight Controller Pro", img: "card-drone-flight-pro.webp", id: 418284, gen: "new", cat: "flight", icon: "drone",
       desc: "Real multirotor physics with Cinematic, Sport and Acro modes, plus a one-click Arcade mode. AI drones, mouse-aimed turrets and homing missiles, a procedural Drone Creator and four demo scenes.",
       tags: ["Unity 6", "URP", "AI drones", "Combat"] },
-    { name: "Ball Balance Controller", id: 417744, gen: "new", cat: "balance", icon: "ball",
+    { name: "Fold & Fly: Paper Plane Controller", img: "https://assetstorev1-prd-cdn.unity3d.com/key-image/75e59232-e464-4dab-bf2d-619eb1cdfd71.jpg?v=1", local: "card-fold-and-fly.webp", id: 418984, gen: "new", cat: "flight", icon: "plane",
+      desc: "Fold it, throw it, fly it. A physics paper plane with Arcade and Glide flight, a Paper Plane Creator, tricks and crumpling crashes, wind and updrafts, three game modes, touch controls and six demo scenes.",
+      tags: ["Unity 6", "URP", "Mobile + touch"] },
+    { name: "Ball Balance Controller", img: "https://assetstorev1-prd-cdn.unity3d.com/key-image/c21efb35-bd57-4121-a2bc-3e166b6ff1cd.jpg?v=1", local: "card-ball-balance.webp", id: 417744, gen: "new", cat: "balance", icon: "ball",
       desc: "A cartoon rider balancing on a giant rolling ball with a real balance model, ragdoll falls and googly eyes. Includes 11 ready-made games, AI riders and a no-code level designer.",
       tags: ["Unity 6", "Built-in + URP", "11 games"] },
-    { name: "Roller Skate Controller", id: 417478, gen: "new", cat: "ground", icon: "skate",
+    { name: "Roller Skate Controller", img: "https://assetstorev1-prd-cdn.unity3d.com/key-image/3239068b-2bae-48f8-a6da-6804c88f33fb.png?v=1", local: "card-roller-skate.webp", id: 417478, gen: "new", cat: "ground", icon: "skate",
       desc: "Physics-based inline skating with a procedural IK body, grinds, airs and superhero-style landings. Works on any humanoid rig and includes a full demo skatepark.",
       tags: ["Unity 6", "Built-in + URP", "Any humanoid"] },
-    { name: "Unicycle Controller", id: 418182, gen: "new", cat: "balance", icon: "unicycle",
+    { name: "Unicycle Controller", img: "https://assetstorev1-prd-cdn.unity3d.com/key-image/cd1a4aba-d767-4f97-9ec1-b235b54b8586.jpg?v=1", local: "card-unicycle.webp", id: 418182, gen: "new", cat: "balance", icon: "unicycle",
       desc: "A cartoon rider who has to keep pedalling to stay up, with fore-aft and sideways balance, ragdoll falls, tricks, local multiplayer, CPU riders, and High Wire and Sky Islands modes.",
       tags: ["Unity 6", "Built-in + URP", "Local multiplayer"] }
   ];
@@ -502,7 +511,7 @@ footer p { max-width: 70ch; }
       const tag = c.gen === "new" ? '<span class="tag tag-new">New</span>' : '';
       const demo = c.demo ? `<a class="demo" href="${c.demo}" target="_blank" rel="noopener">Play demo</a>` : "";
       return `<article class="card" data-cat="${c.cat}">
-        <div class="card-art">${tag}${ICONS[c.icon] || ""}</div>
+        ${c.img ? `<div class="card-art has-img">${tag}<img src="${c.img}" data-local="${c.local || ""}" data-icon="${c.icon}" alt="${esc(c.name)} cover image" width="420" height="280" loading="lazy"></div>` : `<div class="card-art">${tag}${ICONS[c.icon] || ""}</div>`}
         <div class="card-body">
           <h3>${esc(c.name)}</h3>
           <p>${esc(c.desc)}</p>
@@ -514,6 +523,14 @@ footer p { max-width: 70ch; }
       </article>`;
     }).join("");
   }
+  grid.addEventListener("error", (e) => {
+    const img = e.target;
+    if (!(img instanceof HTMLImageElement)) return;
+    if (img.dataset.local) { const next = img.dataset.local; img.dataset.local = ""; img.src = next; return; }
+    const art = img.parentElement;
+    art.classList.remove("has-img");
+    img.replaceWith(document.createRange().createContextualFragment(ICONS[img.dataset.icon] || ""));
+  }, true);
   document.getElementById("q").addEventListener("input", (e) => { query = e.target.value; renderGrid(); });
 
   document.getElementById("road").innerHTML = ROADMAP.map((r) =>
