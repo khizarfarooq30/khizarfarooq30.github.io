@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="RageRun Games: Unity physics controllers for drones, paper planes, skates, unicycles and wobbly balance acts.">
+<meta name="description" content="RageRun Games: Unity physics controllers for skateboards, drones, paper planes, roller skates, unicycles and wobbly balance acts.">
 <title>RageRun Games</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -290,7 +290,7 @@ footer .visits img { display: block; height: 20px; width: auto; }
       <div>
         <div class="eyebrow">Unity Asset Store publisher</div>
         <h1>Physics controllers that <em>feel</em> fun.</h1>
-        <p class="lede">RageRun Games builds drop-in Unity controllers for drones, paper planes, skates, unicycles and wobbly balance acts. Each one comes with demo scenes, full C# source and settings an artist can tune without opening a script.</p>
+        <p class="lede">RageRun Games builds drop-in Unity controllers for skateboards, drones, paper planes, roller skates, unicycles and wobbly balance acts. Each one comes with demo scenes, full C# source and settings an artist can tune without opening a script.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#controllers">Browse controllers</a>
           <a class="btn" id="hero-store" href="#" target="_blank" rel="noopener sponsored">Publisher page</a>
@@ -412,6 +412,9 @@ footer .visits img { display: block; height: 20px; width: auto; }
      gen: "new" (current playbook) or "classic" (overhaul planned).
      cat: flight | ground | balance | action */
   const CONTROLLERS = [
+    { name: "Pro Skate Controller", img: "https://assetstorev1-prd-cdn.unity3d.com/key-image/1b5c9b09-05c5-4dc3-9273-8eb31ea14f81.jpg?v=1", local: "card-pro-skate.webp", id: 419320, gen: "new", cat: "ground", icon: "skate",
+      desc: "Physics skateboarding with flick-stick tricks, grinds, manuals, lip tricks and reverts, a procedural IK skater who can step off and walk with the board, a Skateboard Creator and a Park Builder.",
+      tags: ["Unity 6","URP + Built-in","Skateboard Creator"] },
     { name: "Drone Flight Controller Pro", img: "card-drone-flight-pro.webp", id: 418284, gen: "new", cat: "flight", icon: "drone",
       desc: "Real multirotor physics with Cinematic, Sport and Acro modes, plus a one-click Arcade mode. AI drones, mouse-aimed turrets and homing missiles, a procedural Drone Creator and four demo scenes.",
       tags: ["Unity 6", "URP", "AI drones", "Combat"] },
