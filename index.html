@@ -412,22 +412,22 @@ footer .visits img { display: block; height: 20px; width: auto; }
      gen: "new" (current playbook) or "classic" (overhaul planned).
      cat: flight | ground | balance | action */
   const CONTROLLERS = [
-    { name: "Pro Skate Controller", img: "https://assetstorev1-prd-cdn.unity3d.com/key-image/1b5c9b09-05c5-4dc3-9273-8eb31ea14f81.jpg?v=1", local: "card-pro-skate.webp", id: 419320, gen: "new", cat: "ground", icon: "skate",
+    { name: "Pro Skate Controller", img: "card-pro-skate.webp", local: "https://assetstorev1-prd-cdn.unity3d.com/key-image/1b5c9b09-05c5-4dc3-9273-8eb31ea14f81.jpg?v=1", id: 419320, gen: "new", cat: "ground", icon: "skate",
       desc: "Physics skateboarding with flick-stick tricks, grinds, manuals, lip tricks and reverts, a procedural IK skater who can step off and walk with the board, a Skateboard Creator and a Park Builder.",
       tags: ["Unity 6","URP + Built-in","Skateboard Creator"] },
     { name: "Drone Flight Controller Pro", img: "card-drone-flight-pro.webp", id: 418284, gen: "new", cat: "flight", icon: "drone",
       desc: "Real multirotor physics with Cinematic, Sport and Acro modes, plus a one-click Arcade mode. AI drones, mouse-aimed turrets and homing missiles, a procedural Drone Creator and four demo scenes.",
       tags: ["Unity 6", "URP", "AI drones", "Combat"] },
-    { name: "Fold & Fly: Paper Plane Controller", img: "https://assetstorev1-prd-cdn.unity3d.com/key-image/75e59232-e464-4dab-bf2d-619eb1cdfd71.jpg?v=1", local: "card-fold-and-fly.webp", id: 418984, gen: "new", cat: "flight", icon: "plane",
+    { name: "Fold & Fly: Paper Plane Controller", img: "card-fold-and-fly.webp", local: "https://assetstorev1-prd-cdn.unity3d.com/key-image/75e59232-e464-4dab-bf2d-619eb1cdfd71.jpg?v=1", id: 418984, gen: "new", cat: "flight", icon: "plane",
       desc: "Fold it, throw it, fly it. A physics paper plane with Arcade and Glide flight, a Paper Plane Creator, tricks and crumpling crashes, wind and updrafts, three game modes, touch controls and six demo scenes.",
       tags: ["Unity 6", "URP", "Mobile + touch"] },
-    { name: "Ball Balance Controller", img: "https://assetstorev1-prd-cdn.unity3d.com/key-image/c21efb35-bd57-4121-a2bc-3e166b6ff1cd.jpg?v=1", local: "card-ball-balance.webp", id: 417744, gen: "new", cat: "balance", icon: "ball",
+    { name: "Ball Balance Controller", img: "card-ball-balance.webp", local: "https://assetstorev1-prd-cdn.unity3d.com/key-image/c21efb35-bd57-4121-a2bc-3e166b6ff1cd.jpg?v=1", id: 417744, gen: "new", cat: "balance", icon: "ball",
       desc: "A cartoon rider balancing on a giant rolling ball with a real balance model, ragdoll falls and googly eyes. Includes 11 ready-made games, AI riders and a no-code level designer.",
       tags: ["Unity 6", "Built-in + URP", "11 games"] },
-    { name: "Roller Skate Controller", img: "https://assetstorev1-prd-cdn.unity3d.com/key-image/3239068b-2bae-48f8-a6da-6804c88f33fb.png?v=1", local: "card-roller-skate.webp", id: 417478, gen: "new", cat: "ground", icon: "skate",
+    { name: "Roller Skate Controller", img: "card-roller-skate.webp", local: "https://assetstorev1-prd-cdn.unity3d.com/key-image/3239068b-2bae-48f8-a6da-6804c88f33fb.png?v=1", id: 417478, gen: "new", cat: "ground", icon: "skate",
       desc: "Physics-based inline skating with a procedural IK body, grinds, airs and superhero-style landings. Works on any humanoid rig and includes a full demo skatepark.",
       tags: ["Unity 6", "Built-in + URP", "Any humanoid"] },
-    { name: "Unicycle Controller", img: "https://assetstorev1-prd-cdn.unity3d.com/key-image/cd1a4aba-d767-4f97-9ec1-b235b54b8586.jpg?v=1", local: "card-unicycle.webp", id: 418182, gen: "new", cat: "balance", icon: "unicycle",
+    { name: "Unicycle Controller", img: "card-unicycle.webp", local: "https://assetstorev1-prd-cdn.unity3d.com/key-image/cd1a4aba-d767-4f97-9ec1-b235b54b8586.jpg?v=1", id: 418182, demo: "demos/unicycle/", gen: "new", cat: "balance", icon: "unicycle",
       desc: "A cartoon rider who has to keep pedalling to stay up, with fore-aft and sideways balance, ragdoll falls, tricks, local multiplayer, CPU riders, and High Wire and Sky Islands modes.",
       tags: ["Unity 6", "Built-in + URP", "Local multiplayer"] }
   ];
@@ -529,7 +529,7 @@ footer .visits img { display: block; height: 20px; width: auto; }
   grid.addEventListener("error", (e) => {
     const img = e.target;
     if (!(img instanceof HTMLImageElement)) return;
-    if (img.dataset.local) { const next = img.dataset.local; img.dataset.local = ""; img.src = next; return; }
+    if (img.dataset.local) { const next = img.dataset.local; img.dataset.local = ""; img.style.objectFit = "contain"; img.src = next; return; }
     const art = img.parentElement;
     art.classList.remove("has-img");
     img.replaceWith(document.createRange().createContextualFragment(ICONS[img.dataset.icon] || ""));
