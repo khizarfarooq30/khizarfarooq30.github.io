@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="description" content="RageRun Games: Unity physics controllers for skateboards, drones, paper planes, roller skates, unicycles and wobbly balance acts.">
 <title>RageRun Games</title>
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap">
@@ -207,8 +210,9 @@ section { padding-block: 56px; }
 }
 .buy { background: var(--ink); color: var(--bg); }
 .buy:hover { background: var(--orange); color: #fff; }
-.demo { border: 1.5px solid var(--line); color: var(--ink); }
-.demo:hover { border-color: var(--ink); }
+.demo { background: #e8541f; color: #fff; box-shadow: 0 4px 14px rgba(232, 84, 31, 0.35); }
+.demo:hover { background: #c94312; }
+.demo::before { content: "\25B6"; font-size: 11px; margin-right: 7px; position: relative; top: -1px; }
 .empty { padding: 40px; text-align: center; color: var(--muted); border: 1.5px dashed var(--line); border-radius: var(--r); }
 
 /* Roadmap */
@@ -418,7 +422,7 @@ footer .visits img { display: block; height: 20px; width: auto; }
     { name: "Drone Flight Controller Pro", img: "card-drone-flight-pro.webp", id: 418284, gen: "new", cat: "flight", icon: "drone",
       desc: "Real multirotor physics with Cinematic, Sport and Acro modes, plus a one-click Arcade mode. AI drones, mouse-aimed turrets and homing missiles, a procedural Drone Creator and four demo scenes.",
       tags: ["Unity 6", "URP", "AI drones", "Combat"] },
-    { name: "Fold & Fly: Paper Plane Controller", img: "card-fold-and-fly.webp", local: "https://assetstorev1-prd-cdn.unity3d.com/key-image/75e59232-e464-4dab-bf2d-619eb1cdfd71.jpg?v=1", id: 418984, gen: "new", cat: "flight", icon: "plane",
+    { name: "Fold & Fly: Paper Plane Controller", img: "card-fold-and-fly.webp", local: "https://assetstorev1-prd-cdn.unity3d.com/key-image/75e59232-e464-4dab-bf2d-619eb1cdfd71.jpg?v=1", id: 418984, demo: "demos/fold-and-fly/", gen: "new", cat: "flight", icon: "plane",
       desc: "Fold it, throw it, fly it. A physics paper plane with Arcade and Glide flight, a Paper Plane Creator, tricks and crumpling crashes, wind and updrafts, three game modes, touch controls and six demo scenes.",
       tags: ["Unity 6", "URP", "Mobile + touch"] },
     { name: "Ball Balance Controller", img: "card-ball-balance.webp", local: "https://assetstorev1-prd-cdn.unity3d.com/key-image/c21efb35-bd57-4121-a2bc-3e166b6ff1cd.jpg?v=1", id: 417744, gen: "new", cat: "balance", icon: "ball",
