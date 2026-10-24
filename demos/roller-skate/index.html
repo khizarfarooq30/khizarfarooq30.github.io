@@ -7,7 +7,7 @@
 <link rel="icon" href="../../favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32.png">
 <link rel="apple-touch-icon" href="../../apple-touch-icon.png">
-<meta name="description" content="Play the Roller Skate Controller demo in your browser: physics skating with flips, spins, grabs, grinds, manuals, wall rides and ragdoll bails in a skate park. A Unity asset by RageRun Games.">
+<meta name="description" content="Play the Roller Skate Controller demo in your browser: physics inline skating with carves, powerslides, grinds in 10 stances, flips, wall rides and ragdoll bails in three demo parks, including the Silly Park. A Unity asset by RageRun Games.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 <style>
@@ -65,14 +65,20 @@
       <span><kbd>Space</kbd> jump</span>
       <span><kbd>Shift</kbd> crouch / pump</span>
       <span>In air: <kbd>W</kbd><kbd>S</kbd> flip</span>
-      <span><kbd>E</kbd><kbd>Q</kbd> grab</span>
-      <span><kbd>F</kbd> manual</span>
-      <span><kbd>X</kbd> realistic / superhero</span>
+      <span><kbd>E</kbd><kbd>Q</kbd> grab / switch stance on a rail</span>
+      <span>On a rail: <kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> stances</span>
+      <span><kbd>C</kbd> powerslide</span>
+      <span><kbd>F</kbd><kbd>V</kbd> heel / toe roll</span>
+      <span><kbd>X</kbd> realistic / hero / silly</span>
+      <span><kbd>P</kbd> outfit / silly</span>
+      <span><kbd>N</kbd> lighting</span>
       <span><kbd>R</kbd> respawn</span>
+      <span><kbd>H</kbd> controls</span>
+      <span><kbd>Backspace</kbd> back to menu</span>
     </div>
     <button id="fs" type="button">Fullscreen</button>
   </div>
-  <p class="note">Click the game first so it gets your keys. Gamepads work too: press a button to connect. Press any key to skip the intro. H shows or hides the controls.</p>
+  <p class="note">Click the game first so it gets your keys. Gamepads work too: press a button to connect. Pick a park in the menu. H shows the full controls in each park.</p>
 </main>
 <script>
   if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) document.getElementById("mobile-note").style.display = "block";
